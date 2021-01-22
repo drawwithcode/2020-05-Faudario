@@ -9,21 +9,21 @@ function newConnection() {
 socket.on("mouseBroadcast", otherMouse);
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  background("red");
+  createCanvas(900, 900);
+  background(30);
 }
 
 function otherMouse(data) {
   console.log("received:", data);
   noStroke();
-  fill("yellow");
+  fill("peachpuff");
   ellipse(data.x, data.y, 20);
 }
 
 function mouseDragged() {
   console.log("sending: ", mouseX, mouseY);
   noStroke();
-  fill(255);
+  fill('lavender');
 
   let message = {
     x: mouseX,
@@ -34,4 +34,13 @@ function mouseDragged() {
   ellipse(mouseX, mouseY, 20);
 }
 
-function draw() {}
+function draw() {
+
+fill('coral')
+
+rect(width/3,0,10,height)
+rect(width/3*2,0,10,height)
+rect(0,height/3,width,10)
+rect(0,height/3*2,width,10)
+
+}
